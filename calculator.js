@@ -27,76 +27,65 @@ window.onload = function() {
   var result = document.getElementById("result_display_value");
 
 
-  numOne.onclick = function(event) {
-    storeNum += numOne.innerHTML;
+  var handleNumberClick = function(numberElement) {
+    storeNum += numberElement;
     result.innerHTML = storeNum;
+  }
 
+  numOne.onclick = function(event) {
+    handleNumberClick(numOne.innerHTML);
   };
   numTwo.onclick = function(event) {
-    storeNum += numTwo.innerHTML;
-    result.innerHTML = storeNum;
+    handleNumberClick(numTwo.innerHTML);
   };
   numThree.onclick = function(event) {
-    storeNum += numThree.innerHTML;
-    result.innerHTML = storeNum;
+    handleNumberClick(numThree.innerHTML);
   };
   numFour.onclick = function(event) {
-    storeNum += numFour.innerHTML;
-    result.innerHTML = storeNum;
+    handleNumberClick(numFour.innerHTML);
   };
   numFive.onclick = function(event) {
-    storeNum += numFive.innerHTML;
-    result.innerHTML = storeNum;
+    handleNumberClick(numFive.innerHTML);
   };
   numSix.onclick = function(event) {
-    storeNum += numSix.innerHTML;
-    result.innerHTML = storeNum;
+    handleNumberClick(numSix.innerHTML);
   };
   numSeven.onclick = function(event) {
-    storeNum += numSeven.innerHTML;
-    result.innerHTML = storeNum;
+    handleNumberClick(numSeven.innerHTML);
   };
   numEight.onclick = function(event) {
-    storeNum += numEight.innerHTML;
-    result.innerHTML = storeNum;
+    handleNumberClick(numEight.innerHTML);
   };
   numNine.onclick = function(event) {
-    storeNum += numNine.innerHTML;
-    result.innerHTML = storeNum;
+    handleNumberClick(numNine.innerHTML);
   };
   numZero.onclick = function(event) {
-    storeNum += numZero.innerHTML;
-    result.innerHTML = storeNum;
+    handleNumberClick(numZero.innerHTML);
   };
 
-  add.onclick = function(event) {
+
+  var operatorAction = function(operatorString, operatorDisplay) {
     firstNum = parseInt(storeNum);
     storeNum = "";
-    operator = "addition";
-    result.innerHTML = add.innerHTML;
+    operator = operatorString;
+    result.innerHTML = operatorDisplay;
+  }
+
+  add.onclick = function(event) {
+    operatorAction("addition", add.innerHTML);
   };
 
 
   subtract.onclick = function(event) {
-    firstNum = parseInt(storeNum);
-    storeNum = "";
-    operator = "subtraction";
-    result.innerHTML = subtract.innerHTML;
+    operatorAction("subtraction", subtract.innerHTML);
   };
 
   multiply.onclick = function(event) {
-    firstNum = parseInt(storeNum);
-    storeNum = "";
-    operator = "multiplication";
-    result.innerHTML = multiply.innerHTML;
-
+    operatorAction("multiplication", multiply.innerHTML);
   };
 
   divide.onclick = function(event) {
-    firstNum = parseInt(storeNum);
-    storeNum = "";
-    operator = "division";
-    result.innerHTML = divide.innerHTML;
+    operatorAction("division", divide.innerHTML);
   };
 
   equal.onclick = function(event) {
